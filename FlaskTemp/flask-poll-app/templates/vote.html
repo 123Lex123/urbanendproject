@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote</title>
+</head>
+<body>
+    <h1>{{ poll.question }}</h1>
+    <form method="POST">
+        {% for option in poll.options %}
+            <input type="radio" name="option" value="{{ option.id }}" required>
+            {{ option.text }} ({{ option.votes }} votes)
+            <br>
+        {% endfor %}
+        <button type="submit">Vote</button>
+    </form>
+</body>
+</html>

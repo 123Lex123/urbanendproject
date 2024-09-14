@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Poll</title>
+</head>
+<body>
+    <h1>Create a New Poll</h1>
+    <form method="POST">
+        <label for="question">Question:</label>
+        <input type="text" name="question" required>
+        <br>
+        <label for="options">Options:</label>
+        <input type="text" name="options" required>
+        <button type="button" onclick="addOption()">Add Another Option</button>
+        <div id="additional-options"></div>
+        <br>
+        <button type="submit">Create Poll</button>
+    </form>
+
+    <script>
+        function addOption() {
+            var newOption = document.createElement('input');
+            newOption.setAttribute('type', 'text');
+            newOption.setAttribute('name', 'options');
+            document.getElementById('additional-options').appendChild(newOption);
+        }
+    </script>
+</body>
+</html>
